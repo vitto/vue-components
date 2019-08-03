@@ -4,8 +4,16 @@
   "description": "Just for fun, trying to learn VUE",
   "main": "index.js",
   "scripts": {
+    "deploy": "echo no deploy set",
     "lint:js": "eslint src/vue/**/*.{js,jsx} --fix",
-    "lint:sass": "sass-lint -c .sass-lint.yml 'src/scss/**/*.scss' -v -i 'src/scss/variables/**/*.scss'"
+    "lint:sass": "sass-lint -c .sass-lint.yml 'src/scss/**/*.scss' -v -i 'src/scss/variables/**/*.scss'",
+    "json-to-sass": "run-for-every-file --src src/scss/data/ --dest src/scss/variables/ --file '**/*.json' --not-file '**/*.scss' --run 'json-to-scss {{src-file}} {{dest}}{{file-name-ext}}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:sass",
+      "pre-push": "npm run deploy"
+    }
   },
   "repository": {
     "type": "git",
