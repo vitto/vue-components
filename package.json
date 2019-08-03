@@ -4,7 +4,8 @@
   "description": "Just for fun, trying to learn VUE",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:js": "eslint src/vue/**/*.{js,jsx} --fix",
+    "lint:sass": "sass-lint -c .sass-lint.yml 'src/scss/**/*.scss' -v -i 'src/scss/variables/**/*.scss'"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^3.0.2",
+    "sass-lint": "^1.13.1",
     "standard": "^13.1.0"
   }
 }
