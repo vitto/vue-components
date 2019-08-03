@@ -1,0 +1,40 @@
+{
+  "brand": {
+    "primary": "#0044d7",
+    "secondary": "#b40038"
+  },
+  "tone": {
+    "black": "rgb(0, 0, 0)",
+    "abbey": "rgb(77, 77, 77)",
+    "boulder": "rgb(121, 121, 121)",
+    "dust": "rgb(153, 154, 156)",
+    "silver": "rgb(187, 189, 191)",
+    "mercury": "rgb(230, 230, 230)",
+    "haze": "rgb(242, 242, 242)",
+    "white": "rgb(250, 250, 250)"
+  },
+  "status": {
+    "disabled": "rgb(187, 189, 191)",
+    "error": "rgb(230, 32, 68)",
+    "info": "rgb(0, 181, 184)",
+    "neutral": "rgb(77, 77, 77)",
+    "success": "rgb(133, 195, 61)",
+    "warning": "rgb(230, 169, 53)"
+  },
+  "palette": {
+    "colors": {
+      "azure": "#61f1ff",
+      "blue": "#355bca",
+      "green": "#288e0a",
+      "orange": "#ff922e",
+      "purple": "#b961ff",
+      "red": "#c95338",
+      "yellow": "#fcdd0b"
+    },
+    "tones": {
+      "1": "rgb(100, 100, 100)",
+      "2": "rgb(150, 150, 150)",
+      "3": "rgb(200, 200, 200)"
+    }
+  }
+}

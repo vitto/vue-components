@@ -1,0 +1,85 @@
+body {
+  // sass-lint:disable no-vendor-prefixes
+  -webkit-tap-highlight-color: transparent;
+  @include apply-styles-set($font-sans-styles, 'paragraph');
+  background-color: get($tone, 'white');
+  color: get($tone, 'abbey');
+  font-family: get($font-family, 'sans');
+  width: 100%;
+}
+
+button {
+  font-family: get($font-family, 'sans');
+}
+
+input {
+  appearance: none;
+
+  &::placeholder {
+    font-family: get($font-family, 'sans');
+  }
+}
+
+b {
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+aside,
+code,
+div,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+input,
+main,
+section,
+span {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+hr {
+  $size: 4px;
+  background-color: get($tone, 'mercury');
+  border: 0;
+  border-radius: $size;
+  height: $size;
+  margin: s(1) 0;
+  width: 100%;
+}
+
+// sass-lint:disable no-empty-rulesets
+::selection {
+  // sass-lint:disable no-color-literals
+  // background-color: rgba(get($color-flow, 'text'), 0.99);
+}
+
+code {
+  $tint: #000;
+  background-color: sh(get($tone, 'haze'), $tint);
+  border-radius: get($radius, 'small');
+  color: sh(get($tone, 'boulder'), $tint);
+  padding: s(0.125) s(0.25);
+}
