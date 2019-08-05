@@ -1,0 +1,6 @@
+@import '../../scss/import';
+
+.button-item {
+  background-color: get($brand, 'primary');
+  color: sh(get($tone, 'mercury'), get($brand, 'primary'));
+}

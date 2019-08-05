@@ -7,6 +7,10 @@
         "plugin:vue/essential",
         "standard"
     ],
+    "plugins": [
+        "vue",
+        "import"
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"

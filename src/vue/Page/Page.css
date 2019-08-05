@@ -1,0 +1,14 @@
+<template>
+  <button class="button-item">
+      <slot></slot>
+  </button>
+</template>
+
+<script>
+export default {
+  name: 'button-item',
+  // ...
+}
+</script>
+
+<style scoped src="./Button.css"></style>
