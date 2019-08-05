@@ -12,7 +12,7 @@
 <script>
 import states from './Button.scss'
 
-console.log(states);
+console.log(states)
 
 export default {
   name: 'button-item',
@@ -20,7 +20,7 @@ export default {
   computed: {
     classObject: function () {
       return {
-        'active': this.isActive && !this.error,
+        active: this.isActive && !this.error,
         'text-danger': this.error && this.error.type === 'fatal'
       }
     }

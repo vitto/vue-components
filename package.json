@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "storybook-to-ghpages",
     "json-to-sass": "run-for-every-file --src src/scss/data/ --dest src/scss/variables/ --file '**/*.json' --not-file '**/*.scss' --run 'json-to-scss {{src-file}} {{dest}}{{file-name-ext}}'",
-    "lint:js": "eslint src/vue/**/*.{js,jsx} --fix",
+    "lint:js": "eslint src/vue/**/*.{vue,js} --fix",
     "lint:sass": "sass-lint -c .sass-lint.yml 'src/scss/**/*.scss' -v -i 'src/scss/variables/**/*.scss'",
     "storybook": "npm run json-to-sass && start-storybook --port 12345"
   },

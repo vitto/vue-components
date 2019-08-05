@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'page-item',
+  name: 'page-item'
 }
 </script>
 
