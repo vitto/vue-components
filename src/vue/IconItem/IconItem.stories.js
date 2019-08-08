@@ -12,5 +12,6 @@ storiesOf('Icon', module)
   .add('Default', () => '<icon-item name="warning"/>')
   .add('Dictionary', () => ({
     components: { IconItem },
+    data: { icons },
     template: '<icon-item :name="iconName" v-for="(value, iconName) in icons"/>'
   }))
