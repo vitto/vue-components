@@ -3,11 +3,15 @@
 $ease: get($tween, 'hover');
 $small-height: 26px;
 
-// sass-lint:disable-all
-:export {
-  states: pippo,pluto;
+@import './Button.export';
+
+@mixin add-state($state) {
+  $states: join($states, $state) !global;
+
+  &--#{state} {
+    @content;
+  }
 }
-// sass-lint:enable-all
 
 .button {
   align-items: center;
@@ -35,52 +39,25 @@ $small-height: 26px;
     filter: brightness(1.5);
   }
 
-  &--small {
-    height: $small-height;
+  &__text {
+    line-height: 1;
 
-    .button {
-      &__text {
-        // @include apply-styles-set($font-sans-styles, 'small');
-        margin-top: 2px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__icon {
+    &:first-child {
+      margin-right: s(0.25);
+
+      &:last-child {
+        margin: 0;
       }
-
-      &__icon {
-        font-size: 18px;
-      }
-    }
-  }
-
-  &--cancel {
-    background-color: transparent;
-    border-color: get($tone, 'abbey');
-    color: get($tone, 'abbey');
-  }
-
-  &--warning {
-    background-color: get($status, 'warning');
-    border-color: get($status, 'warning');
-
-    &:focus,
-    &:hover {
-      filter: brightness(1.1);
     }
 
-    &:active {
-      filter: brightness(1.25);
-    }
-  }
-
-  &--danger {
-    background-color: get($status, 'error');
-    border-color: get($status, 'error');
-
-    &:focus,
-    &:hover {
-      filter: brightness(1.1);
-    }
-
-    &:active {
-      filter: brightness(1.2);
+    &:last-child {
+      margin-left: s(0.25);
     }
   }
 
@@ -98,7 +75,13 @@ $small-height: 26px;
     }
   }
 
-  &--confirm {
+  @include add-state('cancel') {
+    background-color: transparent;
+    border-color: get($tone, 'abbey');
+    color: get($tone, 'abbey');
+  }
+
+  @include add-state('confirm') {
     background-color: get($status, 'success');
     border-color: get($status, 'success');
 
@@ -112,71 +95,54 @@ $small-height: 26px;
     }
   }
 
-  &--collapse {
-    align-items: center;
-    flex-direction: column;
+  @include add-state('warning') {
+    background-color: get($status, 'warning');
+    border-color: get($status, 'warning');
 
-    @include media ('tablet') {
-      flex-direction: row;
+    &:focus,
+    &:hover {
+      filter: brightness(1.1);
     }
 
-    @include media ('mobile') {
-      height: auto;
-      padding-bottom: s(0.25);
-      padding-top: s(0.25);
-
-      .button {
-        &__icon {
-          &:first-child {
-            margin-bottom: s(0.25);
-            margin-right: 0;
-
-            &:last-child {
-              margin: 0;
-            }
-          }
-
-          &:last-child {
-            margin-left: 0;
-            margin-top: s(0.25);
-          }
-        }
-
-        &__text {
-          max-width: 100px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
+    &:active {
+      filter: brightness(1.25);
     }
   }
 
-  &__text {
-    line-height: 1;
+  @include add-state('danger') {
+    background-color: get($status, 'error');
+    border-color: get($status, 'error');
 
-    &::first-letter {
-      text-transform: uppercase;
+    &:focus,
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      filter: brightness(1.2);
     }
   }
 
-  &--disabled {
+  @include add-state('disabled') {
     background-color: get($status, 'disabled');
     border-color: get($status, 'disabled');
     pointer-events: none;
   }
 
-  &__icon {
-    &:first-child {
-      margin-right: s(0.25);
+  &--small {
+    height: $small-height;
 
-      &:last-child {
-        margin: 0;
+    .button {
+      &__text {
+        // @include apply-styles-set($font-sans-styles, 'small');
+        margin-top: 2px;
       }
-    }
 
-    &:last-child {
-      margin-left: s(0.25);
+      &__icon {
+        font-size: 18px;
+      }
     }
   }
 }
+
+@include export-states;

@@ -1,0 +1,11 @@
+$states: ();
+
+@mixin export-states {
+  // sass-lint:disable-all
+  @at-root {
+    :export {
+      states: #{$states};
+    }
+  }
+  // sass-lint:enable-all
+}

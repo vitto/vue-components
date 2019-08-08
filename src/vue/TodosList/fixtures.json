@@ -1,0 +1,17 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Milk",
+      "completed": false
+    },{
+      "id": 2,
+      "title": "Eggs",
+      "completed": true
+    },{
+      "id": 3,
+      "title": "Oranges",
+      "completed": false
+    }
+  ]
+}

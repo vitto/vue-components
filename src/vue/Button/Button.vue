@@ -1,7 +1,7 @@
 <template>
   <button
     class="button"
-    v-bind:class="classObject"
+    :class="state"
   >
     <div class="button__text">
       <slot/>
@@ -9,23 +9,5 @@
   </button>
 </template>
 
-<script>
-import states from './Button.scss'
-
-console.log(states)
-
-export default {
-  name: 'button-item',
-  props: ['isActive', 'hasError'],
-  computed: {
-    classObject: function () {
-      return {
-        active: this.isActive && !this.error,
-        'text-danger': this.error && this.error.type === 'fatal'
-      }
-    }
-  }
-}
-</script>
-
+<script src="./Button.js"></script>
 <style lang="scss" scoped src="./Button.scss"></style>

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { addParameters, configure } from '@storybook/vue'
+import { addParameters, addDecorator, configure } from '@storybook/vue'
 import { themes } from '@storybook/theming';
 
 import theme from './theme';
@@ -8,6 +8,11 @@ import '../node_modules/node-normalize-scss/_normalize.scss'
 import '../node_modules/material-design-icons/iconfont/material-icons.css'
 import '../node_modules/typeface-roboto/index.css'
 import '../src/scss/import-global.scss'
+
+function decorator () {
+  return { name: 'decorator-item', template: '<page-item><story/></page-item>' }
+}
+addDecorator(decorator)
 
 addParameters({
   options: {
