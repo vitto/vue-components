@@ -1,5 +1,11 @@
 @import '../../scss/import';
 
 .todo-list {
+  box-shadow: get($shadow, 'normal');
+  max-width: 400px;
+  padding: s(2) s(1);
 
+  &__list {
+    padding: 0;
+  }
 }

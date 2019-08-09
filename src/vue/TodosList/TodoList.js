@@ -10,5 +10,11 @@ export default {
   },
   data () {
     return data
+  },
+  methods: {
+    deleteItem (id) {
+      console.log('deleteItem')
+      this.todos = this.todos.filter(todo => todo.id !== id)
+    }
   }
 }

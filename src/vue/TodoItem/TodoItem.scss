@@ -1,5 +1,39 @@
+@import '../../scss/import';
+
 .todo-item {
+  align-items: center;
+  border-radius: get($radius, 'normal');
+  display: flex;
   list-style-type: square;
-  background: red;
-  color: white;
+  padding: s(0.25);
+  transition: background-color get($tween, 'hover');
+
+  & + & {
+    margin-top: s(0.25);
+  }
+
+  &--complete {
+    background-color: get($tone, 'haze');
+  }
+
+  &:hover {
+    .todo-item {
+      &__delete {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  &__checkbox {
+    flex-grow: 1;
+  }
+
+  &__delete {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-3px, 0);
+    transition: opacity get($tween, 'slide'), transform get($tween, 'slide');
+  }
 }

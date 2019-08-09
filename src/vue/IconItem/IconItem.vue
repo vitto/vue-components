@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <i class="material-icons">{{icon}}</i>
 </template>
 

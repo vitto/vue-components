@@ -1,8 +1,6 @@
-<template>
-  <div
-    class="page"
-    >
-      <slot/>
+<template lang="html">
+  <div class="page">
+    <slot/>
   </div>
 </template>
 

@@ -1,14 +1,23 @@
-@import '../../scss/import';
+@import '../../../scss/import';
 
 $ease: get($tween, 'hover');
 $small-height: 26px;
 
-@import './Button.export';
+$states: '';
+$tones: '';
 
 @mixin add-state($state) {
-  $states: join($states, $state) !global;
+  $states: '#{$states $state}' !global;
 
-  &--#{state} {
+  &--#{$state} {
+    @content;
+  }
+}
+
+@mixin add-tone($tone) {
+  $tones: '#{$tones $tone}' !global;
+
+  &--#{$tone} {
     @content;
   }
 }
@@ -17,7 +26,7 @@ $small-height: 26px;
   align-items: center;
   background-color: get($brand, 'primary');
   border: 1px solid get($brand, 'primary');
-  border-radius: get($radius, 'normal');
+  border-radius: get($radius, 'small');
   color: get($tone, 'white');
   cursor: pointer;
   display: inline-flex;
@@ -37,6 +46,15 @@ $small-height: 26px;
 
   &:active {
     filter: brightness(1.5);
+  }
+
+  &--is-icon {
+    padding: 0;
+    width: get($form, 'input-height');
+
+    &.button--small {
+      width: $small-height;
+    }
   }
 
   &__text {
@@ -61,27 +79,7 @@ $small-height: 26px;
     }
   }
 
-  &--option {
-    background-color: get($tone, 'abbey');
-    border-color: get($tone, 'abbey');
-
-    &:focus,
-    &:hover {
-      filter: brightness(0.8);
-    }
-
-    &:active {
-      filter: brightness(1);
-    }
-  }
-
-  @include add-state('cancel') {
-    background-color: transparent;
-    border-color: get($tone, 'abbey');
-    color: get($tone, 'abbey');
-  }
-
-  @include add-state('confirm') {
+  @include add-tone('confirm') {
     background-color: get($status, 'success');
     border-color: get($status, 'success');
 
@@ -95,7 +93,7 @@ $small-height: 26px;
     }
   }
 
-  @include add-state('warning') {
+  @include add-tone('warning') {
     background-color: get($status, 'warning');
     border-color: get($status, 'warning');
 
@@ -109,9 +107,29 @@ $small-height: 26px;
     }
   }
 
-  @include add-state('danger') {
+  @include add-tone('danger') {
     background-color: get($status, 'error');
     border-color: get($status, 'error');
+
+    &:focus,
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      filter: brightness(1.2);
+    }
+  }
+
+  @include add-tone('cancel') {
+    background-color: transparent;
+    border-color: get($tone, 'abbey');
+    color: get($tone, 'abbey');
+  }
+
+  @include add-tone('info') {
+    background-color: get($status, 'info');
+    border-color: get($status, 'info');
 
     &:focus,
     &:hover {
@@ -129,13 +147,12 @@ $small-height: 26px;
     pointer-events: none;
   }
 
-  &--small {
+  @include add-state('small') {
     height: $small-height;
 
     .button {
       &__text {
-        // @include apply-styles-set($font-sans-styles, 'small');
-        margin-top: 2px;
+        @include apply-styles-set($font-sans-styles, 'detail');
       }
 
       &__icon {
@@ -144,5 +161,11 @@ $small-height: 26px;
     }
   }
 }
-
-@include export-states;
+// sass-lint:disable no-misspelled-properties
+@mixin export {
+  :export {
+    smallHeight: $small-height;
+    states: #{$states};
+    tones: #{$tones};
+  }
+}
