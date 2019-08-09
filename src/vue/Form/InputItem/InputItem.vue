@@ -8,7 +8,8 @@
         :class="[hasPlaceholderLabel, isDirty]"
         :name="name"
         :placeholder="placeholder"
-        :value="value"
+        v-model="text"
+        v-on:blur="text = $event.target.value;"
         class="input__field"
         type="text"
       >

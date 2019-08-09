@@ -11,16 +11,24 @@ export default {
     name: {
       type: String,
       default: 'input-text'
-    },
-    value: String
+    }
+  },
+  data: function () {
+    return {
+      text: ''
+    }
   },
   computed: {
     hasPlaceholderLabel () {
       return this.placeholderLabel ? 'input__field--placeholder-label' : ''
     },
     isDirty () {
-      console.log('this works once')
-      return this.value ? 'input__field--dirty' : ''
+      return this.text ? 'input__field--dirty' : ''
+    }
+  },
+  methods: {
+    updateValue (value) {
+      console.log(value)
     }
   },
   components: {
