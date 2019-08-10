@@ -11,7 +11,7 @@ export default {
   },
   computed: {
     icon: function () {
-      return dictionary[this.name] || dictionary[defaultName]
+      return dictionary[this.name] || this.name
     }
   }
 }

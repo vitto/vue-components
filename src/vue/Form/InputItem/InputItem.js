@@ -4,14 +4,12 @@ import IconItem from '../../IconItem/IconItem.vue'
 export default {
   name: 'InputItem',
   props: {
-    icon: String,
-    label: String,
-    placeholder: String,
-    placeholderLabel: String,
-    name: {
-      type: String,
-      default: 'input-text'
-    }
+    autocomplete: { type: String, default: 'off' },
+    icon: { type: String },
+    label: { type: String },
+    name: { type: String, default: 'input-text' },
+    placeholder: { type: String },
+    placeholderLabel: { type: String }
   },
   data: function () {
     return {

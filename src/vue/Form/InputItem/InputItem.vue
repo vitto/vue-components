@@ -5,15 +5,16 @@
     </div>
     <div class="input__row">
       <input
+        :autocomplete="autocomplete"
         :class="[hasPlaceholderLabel, isDirty]"
         :name="name"
         :placeholder="placeholder"
-        v-model="text"
-        v-on:blur="text = $event.target.value;"
         class="input__field"
         type="text"
+        v-model="text"
+        v-on:blur="text = $event.target.value;"
       >
-      <div v-if="placeholderLabel" class="input__placeholder text-sans text-sans--label">
+      <div v-if="placeholderLabel" class="input__placeholder text-sans text-sans--placeholder">
         {{ placeholderLabel }}
       </div>
       <div v-if="icon" class="input__icon-area">

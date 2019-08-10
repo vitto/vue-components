@@ -5,9 +5,14 @@
       <todo-item
         :key="todo.id"
         :todo="todo"
+        class="todo-list__item"
         v-bind:todos="todos"
         v-for="todo in todos"
         v-on:delete-todo="deleteItem"
+      />
+      <todo-insert
+        class="todo-list__item"
+        v-on:add-todo="addItem"
       />
     </ul>
   </section>

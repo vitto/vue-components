@@ -24,6 +24,10 @@ module.exports = async ({ config, mode }) => {
         loader: 'file-loader?name=img/[name].[ext]',
     })
 
-    // Return the altered config
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@vue': path.resolve(__dirname, '../src/vue'),
+    }
+
     return config
 }

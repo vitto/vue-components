@@ -1,0 +1,11 @@
+@import '../../../scss/import';
+
+.todo-insert {
+  display: flex;
+  padding: s(0.25);
+
+  &__action {
+    flex-shrink: 0;
+    margin-left: s(1);
+  }
+}

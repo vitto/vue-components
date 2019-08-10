@@ -1,4 +1,4 @@
-@import '../../scss/import';
+@import '../../../scss/import';
 
 .todo-item {
   align-items: center;
@@ -7,10 +7,6 @@
   list-style-type: square;
   padding: s(0.25);
   transition: background-color get($tween, 'hover');
-
-  & + & {
-    margin-top: s(0.25);
-  }
 
   &--complete {
     background-color: get($tone, 'haze');

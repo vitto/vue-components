@@ -1,5 +1,5 @@
-import CheckboxItem from '../Form/CheckboxItem/CheckboxItem.vue'
-import ButtonItem from '../Form/ButtonItem/ButtonItem.vue'
+import CheckboxItem from '@vue/Form/CheckboxItem/CheckboxItem.vue'
+import ButtonItem from '@vue/Form/ButtonItem/ButtonItem.vue'
 
 export default {
   name: 'TodoItem',

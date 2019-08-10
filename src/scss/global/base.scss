@@ -17,6 +17,8 @@ input {
 
   &::placeholder {
     font-family: get($font-family, 'sans');
+    @include apply-styles-set($font-sans-styles, 'placeholder');
+    line-height: 2;
   }
 }
 
