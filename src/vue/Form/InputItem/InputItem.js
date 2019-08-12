@@ -13,7 +13,7 @@ export default {
   },
   data: function () {
     return {
-      text: ''
+      value: ''
     }
   },
   computed: {
@@ -21,12 +21,13 @@ export default {
       return this.placeholderLabel ? 'input__field--placeholder-label' : ''
     },
     isDirty () {
-      return this.text ? 'input__field--dirty' : ''
+      return this.value ? 'input__field--dirty' : ''
     }
   },
   methods: {
-    updateValue (value) {
-      console.log(value)
+    updateValue: function (value) {
+      this.value = value
+      this.$emit('input', this.value)
     }
   },
   components: {

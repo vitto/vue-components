@@ -24,7 +24,6 @@ export default {
         isChecked: false,
         title: this.title
       }
-      console.log('titles?', this.title, this.$title)
       this.$emit('add-todo', todo)
     }
   }

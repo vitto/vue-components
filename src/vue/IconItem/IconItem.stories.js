@@ -24,4 +24,3 @@ Vue.component('icons-dictionary', {
 storiesOf('Icon', module)
   .add('Default', () => '<icon-item name="warning"/>')
   .add('Dictionary', () => '<icons-dictionary/>')
-  .add('Vendor ids', () => '<icon-item name="bubble_chart"/>')

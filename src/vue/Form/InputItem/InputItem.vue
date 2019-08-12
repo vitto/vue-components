@@ -9,10 +9,11 @@
         :class="[hasPlaceholderLabel, isDirty]"
         :name="name"
         :placeholder="placeholder"
+        :value="value"
         class="input__field"
         type="text"
-        v-model="text"
-        v-on:blur="text = $event.target.value;"
+        v-on:input="updateValue($event.target.value)"
+        v-on:blur="updateValue($event.target.value)"
       >
       <div v-if="placeholderLabel" class="input__placeholder text-sans text-sans--placeholder">
         {{ placeholderLabel }}
