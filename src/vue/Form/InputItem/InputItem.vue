@@ -9,7 +9,6 @@
         :class="[hasPlaceholderLabel, isDirty]"
         :name="name"
         :placeholder="placeholder"
-        :value="value"
         class="input__field"
         type="text"
         v-on:input="updateValue($event.target.value)"

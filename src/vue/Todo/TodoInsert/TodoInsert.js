@@ -14,17 +14,15 @@ export default {
     }
   },
   methods: {
-    setValue (data) {
-      this.title = data
-    },
     addItem (e) {
       e.preventDefault()
       const todo = {
         id: uuid.v4(),
-        isChecked: false,
+        isComplete: false,
         title: this.title
       }
       this.$emit('add-todo', todo)
+      this.title = ''
     }
   }
 }

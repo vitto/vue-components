@@ -16,7 +16,6 @@ export default {
   methods: {
     toggleCompletion (e) {
       this.todo.isComplete = !this.todo.isComplete
-      console.log(this.todo.isComplete)
     }
   }
 }
