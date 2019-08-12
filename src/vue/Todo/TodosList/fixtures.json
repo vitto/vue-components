@@ -1,17 +1,17 @@
 {
   "todos": [
     {
+      "completed": false,
       "id": 1,
-      "title": "Milk",
-      "isComplete": false
+      "title": "Milk"
     },{
+      "completed": true,
       "id": 2,
-      "title": "Eggs",
-      "isComplete": true
+      "title": "Eggs"
     },{
+      "completed": false,
       "id": 3,
-      "title": "Oranges",
-      "isComplete": false
+      "title": "Oranges"
     }
   ]
 }

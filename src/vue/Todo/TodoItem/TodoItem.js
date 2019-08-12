@@ -10,12 +10,12 @@ export default {
   },
   computed: {
     todoStatus: function () {
-      return this.todo.isComplete ? 'todo-item--complete' : ''
+      return this.todo.completed ? 'todo-item--completed' : ''
     }
   },
   methods: {
     toggleCompletion (e) {
-      this.todo.isComplete = !this.todo.isComplete
+      this.todo.completed = !this.todo.completed
     }
   }
 }

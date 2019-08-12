@@ -8,7 +8,7 @@
   padding: s(0.25);
   transition: background-color get($tween, 'hover');
 
-  &--complete {
+  &--completed {
     background-color: get($tone, 'haze');
   }
 

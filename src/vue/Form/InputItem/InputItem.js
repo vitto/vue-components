@@ -15,15 +15,15 @@ export default {
       default: 'input-text'
     },
     placeholder: String,
-    placeholderLabel: String
+    placeholderLabel: String,
+    value: String
   },
   computed: {
     hasPlaceholderLabel () {
       return this.placeholderLabel ? 'input__field--placeholder-label' : ''
     },
     isDirty () {
-      // return this.$attrs.value ? 'input__field--dirty' : ''
-      return 'input__field--dirty'
+      return this.value ? 'input__field--dirty' : ''
     }
   },
   methods: {

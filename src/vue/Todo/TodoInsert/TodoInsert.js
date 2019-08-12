@@ -18,7 +18,7 @@ export default {
       e.preventDefault()
       const todo = {
         id: uuid.v4(),
-        isComplete: false,
+        completed: false,
         title: this.title
       }
       this.$emit('add-todo', todo)

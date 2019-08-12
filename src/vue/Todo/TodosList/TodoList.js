@@ -1,7 +1,8 @@
+import axios from 'axios'
 import H1 from '@vue/Typography/H1/H1.vue'
 import TodoItem from '@vue/Todo/TodoItem/TodoItem.vue'
 import TodoInsert from '@vue/Todo/TodoInsert/TodoInsert.vue'
-import data from './fixtures.json'
+// import data from './fixtures.json'
 
 export default {
   name: 'TodoList',
@@ -11,14 +12,31 @@ export default {
     TodoInsert
   },
   data () {
-    return data
+    // return [...data.todos]
+    return {
+      todos: []
+    }
   },
   methods: {
     deleteItem (id) {
+      axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(res => {})
+        .catch(err => console.log(err))
       this.todos = this.todos.filter(todo => todo.id !== id)
     },
     addItem (todo) {
-      this.todos = [...this.todos, todo]
+      const { completed, title } = todo
+      axios.post('https://jsonplaceholder.typicode.com/todos', {
+        completed,
+        title
+      })
+        .then(res => { this.todos = [...this.todos, res.data] })
+        .catch(err => console.log(err))
     }
+  },
+  created () {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(res => { this.todos = res.data })
+      .catch(err => console.log(err))
   }
 }

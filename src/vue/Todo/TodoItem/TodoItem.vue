@@ -1,7 +1,7 @@
 <template lang="html">
   <li class="todo-item" :class="todoStatus">
     <checkbox-item
-      :checked="todo.isComplete"
+      :checked="todo.completed"
       class="todo-item__checkbox"
       v-on:click.self="toggleCompletion"
     >
