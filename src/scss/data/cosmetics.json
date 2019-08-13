@@ -12,6 +12,6 @@
   },
   "tween": {
     "hover": "0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
-    "slide": "0.325s cubic-bezier(0.19, 1, 0.22, 1)"
+    "slide": "0.475s cubic-bezier(0.19, 1, 0.22, 1)"
   }
 }

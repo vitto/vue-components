@@ -46,6 +46,13 @@
           "line-height": "30px",
           "font-weight": "700"
         }
+      },
+      "h3" : {
+        "default": {
+          "font-size": "18px",
+          "line-height": "22px",
+          "font-weight": "700"
+        }
       }
     }
   }

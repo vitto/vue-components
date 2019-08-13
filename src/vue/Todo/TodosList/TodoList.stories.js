@@ -7,5 +7,5 @@ import Page from '@vue/Page/Page.vue'
 Vue.component('page-item', Page)
 Vue.component('todo-list', TodoList)
 
-storiesOf('Crash tests', module)
-  .add('To vue list', () => '<todo-list></todo-list>')
+storiesOf('Mini apps', module)
+  .add('Todo list', () => '<todo-list/>')
