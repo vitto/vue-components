@@ -6,7 +6,6 @@
         :key="todo.id"
         :todo="todo"
         class="todo-list__item"
-        v-bind:todos="todos"
         v-for="todo in todos"
         v-on:delete-todo="deleteItem"
       />

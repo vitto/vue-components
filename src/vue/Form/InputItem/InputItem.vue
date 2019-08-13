@@ -6,7 +6,7 @@
     <div class="input__row">
       <input
         :autocomplete="autocomplete"
-        :class="[hasPlaceholderLabel, isDirty]"
+        :class="[hasPlaceholderLabel, {'input__field--dirty': isDirty}]"
         :name="name"
         :placeholder="placeholder"
         :value="value"

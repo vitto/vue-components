@@ -16,18 +16,26 @@ export default {
     },
     placeholder: String,
     placeholderLabel: String,
-    value: String
+    value: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    return {
+      isDirty: false
+    }
   },
   computed: {
     hasPlaceholderLabel () {
       return this.placeholderLabel ? 'input__field--placeholder-label' : ''
-    },
-    isDirty () {
-      return this.value ? 'input__field--dirty' : ''
     }
   },
   methods: {
     updateValue: function (value) {
+      if (value !== '') {
+        this.isDirty = true
+      }
       this.$emit('input', value)
     }
   },
