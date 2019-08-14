@@ -3,7 +3,7 @@
     <input
       :checked="checked"
       :name="name"
-      @click="clicked"
+      @change="updateValue($event.target.checked)"
       class="checkbox__field"
       type="checkbox"
     />

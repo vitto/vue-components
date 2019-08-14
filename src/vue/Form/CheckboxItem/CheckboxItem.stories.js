@@ -9,13 +9,25 @@ Vue.component('page-item', Page)
 Vue.component('checkbox-item', CheckboxItem)
 
 storiesOf('Form/Checkbox', module)
-  .add('Default', () => `
-    <checkbox-item>
-      This is a checkbox
-    </checkbox-item>
-  `)
+  .add('Default', () => Vue.component('checkbox-example', {
+    data () {
+      return {
+        isChecked: true
+      }
+    },
+    components: {
+      CheckboxItem
+    },
+    template: `
+      <div>
+        <checkbox-item :checked="isChecked" @input-change="isChecked = !isChecked">
+          This is a {{ isChecked ? 'checked' : 'unchecked' }} checkbox
+        </checkbox-item>
+      </div>
+    `
+  }))
   .add('Custom icon', () => `
-    <checkbox-item icon="warning">
+    <checkbox-item icon="warning" v-model="isChecked">
       This is a warning
     </checkbox-item>
   `)

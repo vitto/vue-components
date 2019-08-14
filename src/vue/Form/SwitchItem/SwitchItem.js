@@ -1,7 +1,7 @@
 import IconItem from '../../IconItem/IconItem.vue'
 
 export default {
-  name: 'CheckboxItem',
+  name: 'SwitchItem',
   props: {
     checked: {
       type: Boolean,
@@ -22,8 +22,8 @@ export default {
     toggleField () {
       this.checked = !this.checked
     },
-    updateValue (value) {
-      this.$emit('input-change', value)
+    clicked (event) {
+      this.$emit('click', this.checked, event)
     }
   }
 }
