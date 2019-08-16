@@ -19,11 +19,13 @@ export default {
     IconItem
   },
   methods: {
-    toggleField () {
-      this.checked = !this.checked
-    },
     updateValue (value) {
       this.$emit('input-change', value)
+    }
+  },
+  computed: {
+    checkCustomIcon: function () {
+      return this.icon ? 'checkbox--custom' : ''
     }
   }
 }

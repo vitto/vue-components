@@ -1,5 +1,5 @@
 <template lang="html">
-  <label class="input">
+  <label class="input" :class="hasIcon">
     <div v-if="label" class="input__label text-sans text-sans--label">
       {{ label }}
     </div>

@@ -14,7 +14,8 @@ export default {
     }
   },
   methods: {
-    toggleCompletion (e) {
+    toggleCompletion: function (e) {
+      console.log(this.todo.completed)
       this.todo.completed = !this.todo.completed
     }
   }

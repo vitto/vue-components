@@ -27,8 +27,11 @@ export default {
     }
   },
   computed: {
-    hasPlaceholderLabel () {
+    hasPlaceholderLabel: function () {
       return this.placeholderLabel ? 'input__field--placeholder-label' : ''
+    },
+    hasIcon: function () {
+      return this.icon ? 'input--has-icon' : ''
     }
   },
   methods: {

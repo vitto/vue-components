@@ -1,7 +1,7 @@
 @import '../../../scss/import';
 
 .todo-item {
-  align-items: center;
+  align-items: flex-start;
   border-radius: get($radius, 'normal');
   display: flex;
   list-style-type: square;
@@ -17,7 +17,6 @@
       &__delete {
         opacity: 1;
         pointer-events: auto;
-        transform: translate(0, 0);
       }
     }
   }
@@ -27,9 +26,8 @@
   }
 
   &__delete {
+    flex-shrink: 0;
     opacity: 0;
     pointer-events: none;
-    transform: translate(-3px, 0);
-    transition: opacity get($tween, 'slide'), transform get($tween, 'slide');
   }
 }

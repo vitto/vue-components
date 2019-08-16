@@ -8,11 +8,11 @@ import Page from '../../Page/Page.vue'
 Vue.component('page-item', Page)
 Vue.component('checkbox-item', CheckboxItem)
 
-storiesOf('Form/Checkbox', module)
-  .add('Default', () => Vue.component('checkbox-example', {
+function context (component) {
+  return Vue.component('checkbox-example', {
     data () {
       return {
-        isChecked: true
+        isChecked: false
       }
     },
     components: {
@@ -20,14 +20,20 @@ storiesOf('Form/Checkbox', module)
     },
     template: `
       <div>
-        <checkbox-item :checked="isChecked" @input-change="isChecked = !isChecked">
-          This is a {{ isChecked ? 'checked' : 'unchecked' }} checkbox
-        </checkbox-item>
+        ${component}
       </div>
     `
-  }))
-  .add('Custom icon', () => `
-    <checkbox-item icon="warning" v-model="isChecked">
-      This is a warning
+  })
+}
+
+storiesOf('Form/Checkbox', module)
+  .add('Default', () => context(`
+    <checkbox-item :checked="isChecked" @input-change="isChecked = !isChecked">
+      This is {{ isChecked ? 'a checked' : 'an unchecked' }} checkbox
     </checkbox-item>
-  `)
+  `))
+  .add('Custom icon', () => context(`
+    <checkbox-item icon="warning" :checked="isChecked" @input-change="isChecked = !isChecked">
+      {{ isChecked ? 'You have confirmed the warning' : 'Please, confirm this warning' }}
+    </checkbox-item>
+  `))

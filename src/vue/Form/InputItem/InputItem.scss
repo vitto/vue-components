@@ -3,6 +3,8 @@
 $outline: 0 0 0 4px rgba(get($brand, 'primary'), 0.075);
 $outline-error: 0 0 0 4px rgba(get($status, 'error'), 0.075);
 $size: get($form, 'input-height');
+$field-background: get($tone, 'white');
+$field-radius: get($radius, 'small');
 
 .input {
   display: block;
@@ -46,8 +48,9 @@ $size: get($form, 'input-height');
   }
 
   &__field {
+    background-color: $field-background;
     border: 1px solid get($tone, 'silver');
-    border-radius: get($radius, 'small');
+    border-radius: $field-radius;
     box-shadow: none;
     color: get($tone, 'abbey');
     height: $size;
@@ -98,15 +101,35 @@ $size: get($form, 'input-height');
   }
 
   &__icon-area {
+    $area-background: rgba($field-background, 0.8);
+    $radius: $field-radius - 1px;
     align-items: center;
+    background-color: $area-background;
+    border-radius: 0 $radius $radius 0;
+    bottom: 1px;
     display: flex;
-    height: $size;
     justify-content: center;
+    pointer-events: none;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 1px;
+    top: 1px;
     width: $size;
     z-index: 2;
+
+    &::after {
+      $from-g: rgba($area-background, 1);
+      $to-g: rgba($area-background, 0);
+      $gradient: linear-gradient(to left, $from-g 0%, $to-g 100%);
+      background-image: $gradient;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 100%;
+      left: s(-1);
+      position: absolute;
+      top: 0;
+      width: s(1);
+    }
   }
 
   &__placeholder {

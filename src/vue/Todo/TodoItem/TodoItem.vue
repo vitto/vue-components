@@ -3,7 +3,7 @@
     <checkbox-item
       :checked="todo.completed"
       class="todo-item__checkbox"
-      v-on:click.self="toggleCompletion"
+      @input-change="toggleCompletion"
     >
       {{ todo.title }}
     </checkbox-item>

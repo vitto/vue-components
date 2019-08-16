@@ -1,5 +1,5 @@
 <template lang="html">
-  <label class="checkbox">
+  <label class="checkbox" :class="checkCustomIcon">
     <input
       :checked="checked"
       :name="name"

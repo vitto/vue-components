@@ -61,6 +61,14 @@ $checked: get($tone, 'abbey');
         opacity: 1;
       }
     }
+
+    &:hover {
+      .checkbox__field {
+        & + .checkbox__icon {
+          opacity: $opacity;
+        }
+      }
+    }
   }
 
   &__icon {
