@@ -1,18 +1,18 @@
 import IconItem from '../../IconItem/IconItem.vue'
 
 export default {
-  name: 'CheckboxItem',
+  name: 'RadioItem',
   props: {
     checked: {
-      type: [String, Number, Object, Array, Boolean],
-      default: null
+      type: Boolean,
+      default: false
     },
     icon: {
       type: String
     },
     name: {
       type: String,
-      default: 'checkbox'
+      default: 'radio'
     },
     size: String
   },
@@ -26,10 +26,10 @@ export default {
   },
   computed: {
     checkCustomIcon: function () {
-      return this.icon ? 'checkbox--custom' : ''
+      return this.icon ? 'radio--custom' : ''
     },
     checkSize: function () {
-      return this.size ? `checkbox--${this.size} text-sans text-sans--checkbox-small` : ''
+      return this.size ? `radio--${this.size} text-sans text-sans--radio-small` : ''
     }
   }
 }

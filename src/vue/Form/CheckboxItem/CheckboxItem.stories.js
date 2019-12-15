@@ -37,3 +37,8 @@ storiesOf('Form/Checkbox', module)
       {{ isChecked ? 'You have confirmed the warning' : 'Please, confirm this warning' }}
     </checkbox-item>
   `))
+  .add('Small', () => context(`
+    <checkbox-item size="small" :checked="isChecked" @input-change="isChecked = !isChecked">
+      This is {{ isChecked ? 'a checked' : 'an unchecked' }} small checkbox
+    </checkbox-item>
+  `))

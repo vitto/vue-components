@@ -40,6 +40,13 @@
           "font-weight": "400"
         }
       },
+      "checkbox-small" : {
+        "default": {
+          "font-size": "12px",
+          "line-height": "18px",
+          "font-weight": "300"
+        }
+      },
       "h1" : {
         "default": {
           "font-size": "28px",

@@ -4,7 +4,7 @@ $opacity: 0.25;
 $default: get($tone, 'dust');
 $checked: get($tone, 'abbey');
 
-.checkbox {
+.radio {
   align-items: end;
   display: inline-flex;
   margin-right: s(1);
@@ -14,7 +14,7 @@ $checked: get($tone, 'abbey');
   }
 
   &:hover {
-    .checkbox {
+    .radio {
       &__icon {
         color: $checked;
         filter: grayscale(0);
@@ -23,7 +23,7 @@ $checked: get($tone, 'abbey');
   }
 
   &--small {
-    .checkbox {
+    .radio {
       &__icon {
         font-size: 18px;
       }
@@ -33,20 +33,20 @@ $checked: get($tone, 'abbey');
   &__field {
     display: none;
 
-    & + .checkbox__icon {
+    & + .radio__icon {
       display: inline-block;
     }
 
-    & + .checkbox__icon + .checkbox__icon {
+    & + .radio__icon + .radio__icon {
       display: none;
     }
 
     &:checked {
-      & + .checkbox__icon {
+      & + .radio__icon {
         display: none;
       }
 
-      & + .checkbox__icon + .checkbox__icon {
+      & + .radio__icon + .radio__icon {
         color: $checked;
         display: inline-flex;
         filter: grayscale(0);
@@ -59,20 +59,20 @@ $checked: get($tone, 'abbey');
   }
 
   &--custom {
-    .checkbox__field {
-      & + .checkbox__icon {
+    .radio__field {
+      & + .radio__icon {
         opacity: $opacity;
       }
 
-      & + .checkbox__icon + .checkbox__icon {
+      & + .radio__icon + .radio__icon {
         filter: grayscale(0);
         opacity: 1;
       }
     }
 
     &:hover {
-      .checkbox__field {
-        & + .checkbox__icon {
+      .radio__field {
+        & + .radio__icon {
           opacity: $opacity;
         }
       }

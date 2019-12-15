@@ -5,9 +5,15 @@
   }
 }
 
-@each $tint-name, $tint-color in $palette-tints {
-  @each $tone-name, $tone-color in $palette-tones {
-    @include add-palette-selector('background-color', $tint-name, $tint-color, $tone-name, $tone-color);
-    @include add-palette-selector('color', $tint-name, $tint-color, $tone-name, $tone-color);
+@mixin add-color-scale($tints, $tones) {
+  @each $tint-name, $tint-color in $tints {
+    @each $tone-name, $tone-color in $tones {
+      @include add-palette-selector('background-color', $tint-name, $tint-color, $tone-name, $tone-color);
+      @include add-palette-selector('color', $tint-name, $tint-color, $tone-name, $tone-color);
+    }
   }
 }
+
+@include add-color-scale($status, $tone);
+@include add-color-scale($brand, $tone);
+@include add-color-scale($palette-tints, $palette-tones);
